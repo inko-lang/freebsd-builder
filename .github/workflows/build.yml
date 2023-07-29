@@ -17,24 +17,11 @@ jobs:
         fail-fast: false
         matrix:
           version:
-            - '12.2'
-            - '12.4'
-            - '13.0'
-            - '13.1'
             - '13.2'
 
           architecture:
             - name: x86-64
               qemu: x86
-
-            - name: arm64
-              qemu: aarch64
-
-          exclude:
-            - version: '12.2'
-              architecture:
-                name: arm64
-                qemu: aarch64
 
     steps:
       - name: Clone Repository
