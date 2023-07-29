@@ -73,7 +73,7 @@ EOF
 }
 
 install_extra_packages() {
-  ASSUME_ALWAYS_YES=yes pkg install sudo bash curl rsync
+  ASSUME_ALWAYS_YES=yes pkg install sudo bash curl rsync llvm15 git
 }
 
 configure_sudo() {
