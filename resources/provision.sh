@@ -111,7 +111,7 @@ install_rust() {
     --fail "https://sh.rustup.rs" | \
     sh -s -- --profile minimal -y --default-toolchain none
 
-  rustup toolchain install 1.70 --profile minimal --no-self-update
+  ~/.cargo/bin/rustup toolchain install 1.70 --profile minimal --no-self-update
 }
 
 setup_secondary_user
