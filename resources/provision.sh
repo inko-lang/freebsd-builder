@@ -100,10 +100,25 @@ setup_work_directory() {
   chown "$permissions" "$work_directory"
 }
 
+install_rust() {
+  curl --proto '=https' \
+    --tlsv1.2 \
+    --retry 10 \
+    --retry-connrefused \
+    --location \
+    --silent \
+    --show-error \
+    --fail "https://sh.rustup.rs" | \
+    sh -s -- --profile minimal -y --default-toolchain none
+
+  rustup toolchain install 1.70 --profile minimal --no-self-update
+}
+
 setup_secondary_user
 configure_boot_flags
 configure_sendmail
 configure_boot_scripts
 install_extra_packages
+install_rust
 configure_sudo
 setup_work_directory
