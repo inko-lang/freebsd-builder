@@ -20,7 +20,7 @@ jobs:
         fail-fast: false
         matrix:
           version:
-            - '13.2'
+            - '14.0'
 
           architecture:
             - name: x86-64
