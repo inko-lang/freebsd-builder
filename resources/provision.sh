@@ -116,7 +116,7 @@ install_local_package() {
 
 install_extra_packages() {
   if upstream_pkg_site_available; then
-    ASSUME_ALWAYS_YES=yes pkg install sudo bash curl rsync llvm17 git
+    ASSUME_ALWAYS_YES=yes pkg install sudo bash curl rsync llvm17 git rclone
   else
     bootstrap_pkg
     install_local_package sudo
