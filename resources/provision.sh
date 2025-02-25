@@ -116,7 +116,7 @@ install_local_package() {
 
 install_extra_packages() {
   if upstream_pkg_site_available; then
-    ASSUME_ALWAYS_YES=yes pkg install sudo bash curl rsync llvm18 git rclone
+    ASSUME_ALWAYS_YES=yes pkg install sudo bash curl rsync
   else
     bootstrap_pkg
     install_local_package sudo
@@ -124,6 +124,8 @@ install_extra_packages() {
     install_local_package curl
     install_local_package rsync
   fi
+
+  ASSUME_ALWAYS_YES=yes pkg install llvm18 git rclone
 }
 
 configure_sudo() {
